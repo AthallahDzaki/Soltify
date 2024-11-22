@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +25,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <span>Home</span>
                     </a>
                 </li>
@@ -28,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="wallet.html">
+                    <a href="wallet.php">
                         <span>Wallet</span>
                     </a>
                 </li>
@@ -172,6 +179,5 @@
         </main>
         
     </div>
-    
 </body>
 </html>

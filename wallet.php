@@ -18,7 +18,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="dashboard.php">
                         <span>Home</span>
                     </a>
                 </li>
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="wallet.html">
+                    <a href="wallet.php">
                         <span>Wallet</span>
                     </a>
                 </li>

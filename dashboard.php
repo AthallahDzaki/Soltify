@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['user'])) {
     header('Location: login.php');
     exit();
 }
@@ -11,15 +11,17 @@ if (!isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-    
+    <input type="checkbox" id="sidebar-toggle">
     <div class="sidebar">
         <div class="sidebar-header">
             <h3 class="brand">
                 <span><h2>Soltify</h2></span>
             </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
         </div>
         
         <div class="sidebar-menu">
@@ -39,10 +41,17 @@ if (!isset($_SESSION['email'])) {
                         <span>Wallet</span>
                     </a>
                 </li>
+                <?= $_SESSION['user']['role'] === 1 ? '<li><a href="admin.php"><span>Admin Panel</span></a></li>' : '' ?>
+                <?= $_SESSION['user']['role'] === 1 ? '<li><a href="coin.php"><span>Add Coin</span></a></li>' : '' ?>
                 <li>
                     <a href="">
                         <span></span>
                         <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="logout.php">
+                        <span>Logout</span>
                     </a>
                 </li>
             </ul>
